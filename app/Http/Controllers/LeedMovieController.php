@@ -68,7 +68,7 @@ class LeedMovieController extends Controller
 
             $genre = Genre::orderBy('id', 'desc')->first();
             $movie->genre_id = $genre->id;
-            $movie->image = $data['poster_url'];
+            $movie->image = $data['thumb_url'];
             $movie->views = 1;
             $movie->created_at = Carbon::now('Asia/Ho_Chi_Minh');
             $movie->thuocphim = 1;

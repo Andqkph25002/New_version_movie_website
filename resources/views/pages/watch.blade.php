@@ -150,8 +150,19 @@
                                 <div class="halim-item">
                                     <a class="halim-thumb" href="{{ route('movie', $item->slug) }}"
                                         title="{{ $item->title }}">
-                                        <figure><img class="lazy img-responsive" src="{{ Storage::url($item->image) }}"
-                                                alt="{{ $item->title }}" title="{{ $item->title }}"></figure>
+                                        <figure>
+
+                                                @php
+                                                $image_check = substr($item->image, 0, 5);
+                                            @endphp
+                                            @if ($image_check == 'https')
+                                                <img class="lazy img-responsive" src="{{ $item->image }}"
+                                                    alt="{{ $item->title }}" title="{{ $item->title }}">
+                                            @else
+                                                <img class="lazy img-responsive" src="{{ Storage::url($item->image) }}"
+                                                    alt="{{ $item->title }}" title="{{ $item->title }}">
+                                            @endif
+                                        </figure>
                                         <span class="status">
                                             @if ($item->resolution == 0)
                                                 HD

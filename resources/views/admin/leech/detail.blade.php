@@ -47,7 +47,7 @@
                         <td scope="col">{{ $res_movie['slug'] }}</td>
 
                         <td scope="col">{{ $res_movie['origin_name'] }}</td>
-                        <td scope="col"><img src="{{ $res_movie['poster_url'] }}" width="150" height="150"
+                        <td scope="col"><img src="{{ $res_movie['thumb_url'] }}" width="150" height="150"
                                 alt=""></td>
                         <td scope="col">{{ $res_movie['episode_total'] }}</td>
                         <td scope="col">{{ $res_movie['time'] }}</td>
